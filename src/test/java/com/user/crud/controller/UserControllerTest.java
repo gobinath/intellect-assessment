@@ -50,8 +50,8 @@ public class UserControllerTest {
 
 		String inputInJson = this.mapToJson(mockUser);
 
-		String inputString = ResponseUtil.jsonFormatter("Duplicate UserId issue!", mockUser.getId(), "XX(OPTIONAL)", "id",
-				"User Id " + mockUser.getId() + " Already exists. Please Enter Unique Id");
+		String inputString = ResponseUtil.jsonFormatter("Duplicate UserId issue!", mockUser.getId(), "XX(OPTIONAL)",
+				"id", "User Id " + mockUser.getId() + " Already exists. Please Enter Unique Id");
 
 		String URI = "/users";
 
@@ -88,7 +88,7 @@ public class UserControllerTest {
 		Mockito.when(userController.updateUser(Mockito.any(String.class), Mockito.any(UserUpdateModel.class)))
 				.thenReturn(inputString);
 
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.post(URI).accept(MediaType.APPLICATION_JSON)
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.put(URI).accept(MediaType.APPLICATION_JSON)
 				.content(inputInJson).contentType(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
