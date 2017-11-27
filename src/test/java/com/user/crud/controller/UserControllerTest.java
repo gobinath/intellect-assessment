@@ -35,6 +35,7 @@ public class UserControllerTest {
 	@MockBean
 	private UserController userController;
 
+	// create user Junit testcase
 	@Test
 	public void testCreateUser() throws Exception {
 
@@ -70,6 +71,7 @@ public class UserControllerTest {
 
 	}
 
+	// Update user junit testcase
 	@Test
 	public void testUpdateUser() throws Exception {
 
@@ -101,6 +103,7 @@ public class UserControllerTest {
 
 	}
 
+	// Deactivate user junit testcase
 	@Test
 	public void testDeleteUser() throws Exception {
 

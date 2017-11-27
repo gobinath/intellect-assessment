@@ -1,12 +1,13 @@
 # Spring boot + CRUD 
 
-SERVER DETAILS
+Server detail
 -------------------
 server.port=9000;
+
 server.context-path=/api/v1;
 
 
-REST ENDPOINTS
+Rest URL
 ------------------
 Add user(PostMapping):
 
@@ -26,7 +27,7 @@ Add user(PostMapping):
   }'
   
   
-  Update User(PutMapping):
+ Update User(PutMapping):
   
    
    curl -X PUT \
@@ -42,9 +43,10 @@ Add user(PostMapping):
   
   
   
-  Delete User(Delete Mapping):
+ Delete User(Delete Mapping):
   
-     curl -X DELETE \
+  
+   curl -X DELETE \
   http://localhost:9000/api/v1/users/user-id/107 \
   -H 'accept: application/json' \
   -H 'cache-control: no-cache' \

@@ -30,7 +30,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-
+	
+	
+	//get all users
 	@GetMapping("/users")
 	public List<User> getUsers() {
 		List<User> users = userService.getUsers();
@@ -38,6 +40,8 @@ public class UserController {
 
 	}
 
+	
+	// add user to users list
 	@PostMapping("/users")
 	public String createUser(@RequestBody User user) throws JSONException {
 
@@ -65,6 +69,8 @@ public class UserController {
 		return ResponseUtil.jsonFormatter("User successfully added!", user.getId(), null, null, null);
 	}
 
+	
+	//update existing user
 	@PutMapping("/users/user-id/{id}")
 	public String updateUser(@PathVariable String id, @RequestBody UserUpdateModel userUpdateModel) {
 
@@ -104,7 +110,8 @@ public class UserController {
 			return ResponseUtil.jsonFormatter(" User " + id + " Updated Successfully.", id, null, null, null);
 		}
 	}
-
+	
+	// deactivate user 
 	@DeleteMapping("/users/user-id/{id}")
 	public String deleteUser(@PathVariable String id) {
 
@@ -139,7 +146,7 @@ public class UserController {
 		}
 
 		if (date.before(now) == false) {
-			return ResponseUtil.jsonFormatter("Enter currect birth date", id, "XX(OPTIONAL)", "birthDate",
+			return ResponseUtil.jsonFormatter("Enter correct birth date", id, "XX(OPTIONAL)", "birthDate",
 					"User date must be less than current date");
 		}
 		return "OK";

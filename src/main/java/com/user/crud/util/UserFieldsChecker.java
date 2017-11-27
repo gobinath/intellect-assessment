@@ -46,7 +46,7 @@ public class UserFieldsChecker {
 			}
 
 			if (date.before(now) == false) {
-				return ResponseUtil.jsonFormatter("Enter currect birth date", user.getId(), "XX(OPTIONAL)", "birthDate",
+				return ResponseUtil.jsonFormatter("Enter correct birth date", user.getId(), "XX(OPTIONAL)", "birthDate",
 						"User date must be less than current date");
 			}
 
